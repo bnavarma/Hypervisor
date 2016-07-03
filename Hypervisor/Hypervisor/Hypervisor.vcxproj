@@ -21,10 +21,16 @@
   <ItemGroup>
     <ClCompile Include="DebugDisplay.cpp" />
     <ClCompile Include="entry.cpp" />
+    <ClCompile Include="exception.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="mmngr_phys.cpp" />
+    <ClCompile Include="mmngr_virtual.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DebugDisplay.h" />
+    <ClInclude Include="exception.h" />
+    <ClInclude Include="mmngr_phys.h" />
+    <ClInclude Include="mmngr_virtual.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Project1\Project1.vcxproj">
@@ -129,6 +135,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>ARCH_X86;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

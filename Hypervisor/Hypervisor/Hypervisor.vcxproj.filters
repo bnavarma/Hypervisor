@@ -14,9 +14,21 @@
     <ClCompile Include="entry.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="DebugDisplay.cpp" />
+    <ClCompile Include="exception.cpp" />
+    <ClCompile Include="mmngr_phys.cpp" />
+    <ClCompile Include="mmngr_virtual.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DebugDisplay.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="exception.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mmngr_phys.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mmngr_virtual.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
