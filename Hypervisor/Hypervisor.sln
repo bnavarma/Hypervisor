@@ -10,6 +10,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Kernel", "Hypervisor\Hyperv
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lib", "Project1\Project1.vcxproj", "{85805EAE-88ED-422A-98D6-B6961E3F030A}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Hal", "Hal\Hal.vcxproj", "{97FD0885-9278-45CF-91BD-D500AC55B727}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -34,6 +36,14 @@ Global
 		{85805EAE-88ED-422A-98D6-B6961E3F030A}.Release|x64.Build.0 = Release|x64
 		{85805EAE-88ED-422A-98D6-B6961E3F030A}.Release|x86.ActiveCfg = Release|Win32
 		{85805EAE-88ED-422A-98D6-B6961E3F030A}.Release|x86.Build.0 = Release|Win32
+		{97FD0885-9278-45CF-91BD-D500AC55B727}.Debug|x64.ActiveCfg = Debug|x64
+		{97FD0885-9278-45CF-91BD-D500AC55B727}.Debug|x64.Build.0 = Debug|x64
+		{97FD0885-9278-45CF-91BD-D500AC55B727}.Debug|x86.ActiveCfg = Debug|Win32
+		{97FD0885-9278-45CF-91BD-D500AC55B727}.Debug|x86.Build.0 = Debug|Win32
+		{97FD0885-9278-45CF-91BD-D500AC55B727}.Release|x64.ActiveCfg = Release|x64
+		{97FD0885-9278-45CF-91BD-D500AC55B727}.Release|x64.Build.0 = Release|x64
+		{97FD0885-9278-45CF-91BD-D500AC55B727}.Release|x86.ActiveCfg = Release|Win32
+		{97FD0885-9278-45CF-91BD-D500AC55B727}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

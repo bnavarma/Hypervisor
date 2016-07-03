@@ -18,35 +18,10 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="DebugDisplay.cpp" />
-    <ClCompile Include="entry.cpp" />
-    <ClCompile Include="exception.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="mmngr_phys.cpp" />
-    <ClCompile Include="mmngr_virtual.cpp" />
-    <ClCompile Include="panic.cpp" />
-    <ClCompile Include="vmmngr_pde.cpp" />
-    <ClCompile Include="vmmngr_pte.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="DebugDisplay.h" />
-    <ClInclude Include="exception.h" />
-    <ClInclude Include="mmngr_phys.h" />
-    <ClInclude Include="mmngr_virtual.h" />
-    <ClInclude Include="vmmngr_pde.h" />
-    <ClInclude Include="vmmngr_pte.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Project1\Project1.vcxproj">
-      <Project>{85805eae-88ed-422a-98d6-b6961e3f030a}</Project>
-    </ProjectReference>
-  </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{48AA4FF5-A2B0-4EF7-A6E1-5444EF8D05C8}</ProjectGuid>
-    <RootNamespace>Hypervisor</RootNamespace>
+    <ProjectGuid>{97FD0885-9278-45CF-91BD-D500AC55B727}</ProjectGuid>
+    <RootNamespace>Hal</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
-    <ProjectName>Kernel</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -93,54 +68,19 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <LinkIncremental>false</LinkIncremental>
-    <GenerateManifest>false</GenerateManifest>
-  </PropertyGroup>
+  <PropertyGroup />
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <WarningLevel>EnableAllWarnings</WarningLevel>
+      <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <SDLCheck>false</SDLCheck>
-      <AdditionalIncludeDirectories>..\Include\;</AdditionalIncludeDirectories>
-      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <PreprocessorDefinitions>ARCH_X86;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <IgnoreStandardIncludePath>true</IgnoreStandardIncludePath>
-      <MinimalRebuild>false</MinimalRebuild>
-      <ExceptionHandling>false</ExceptionHandling>
-      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <StructMemberAlignment>1Byte</StructMemberAlignment>
-      <BufferSecurityCheck>false</BufferSecurityCheck>
-      <RuntimeTypeInfo>false</RuntimeTypeInfo>
-      <AssemblerOutput>AssemblyAndSourceCode</AssemblerOutput>
+      <SDLCheck>true</SDLCheck>
     </ClCompile>
-    <Link>
-      <OutputFile>$(OutDir)\KRNL32.EXE</OutputFile>
-    </Link>
-    <Link>
-      <AdditionalLibraryDirectories>..\Lib\;</AdditionalLibraryDirectories>
-      <AdditionalDependencies />
-      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
-      <GenerateMapFile>true</GenerateMapFile>
-      <MapFileName>Kernel.map</MapFileName>
-      <SubSystem>Native</SubSystem>
-      <Driver>Driver</Driver>
-      <OptimizeReferences>true</OptimizeReferences>
-      <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <EntryPointSymbol>kernel_entry</EntryPointSymbol>
-      <BaseAddress>0x100000</BaseAddress>
-      <FixedBaseAddress>false</FixedBaseAddress>
-      <ImageHasSafeExceptionHandlers>true</ImageHasSafeExceptionHandlers>
-      <AdditionalOptions>/ALIGN:512</AdditionalOptions>
-    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>ARCH_X86;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -169,6 +109,22 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="cpu.h" />
+    <ClInclude Include="gdt.h" />
+    <ClInclude Include="idt.h" />
+    <ClInclude Include="pic.h" />
+    <ClInclude Include="pit.h" />
+    <ClInclude Include="regs.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="cpu.cpp" />
+    <ClCompile Include="gdt.cpp" />
+    <ClCompile Include="Hal.cpp" />
+    <ClCompile Include="idt.cpp" />
+    <ClCompile Include="pic.cpp" />
+    <ClCompile Include="pit.cpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

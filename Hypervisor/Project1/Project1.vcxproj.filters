@@ -3,5 +3,6 @@
   <ItemGroup>
     <ClCompile Include="cstd.cpp" />
     <ClCompile Include="string.cpp" />
+    <ClCompile Include="stdio.cpp" />
   </ItemGroup>
 </Project>
