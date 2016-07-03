@@ -81,7 +81,7 @@ LBACHS:
         xor     dx, dx
         div     WORD [bpbSectorsPerTrack]
         inc     dl
-        mov     BYTE [absoluteSector, dl]
+        mov     BYTE [absoluteSector], dl
         xor     dx, dx
         div     WORD [bpbHeadsPerCylinder]
         mov     BYTE [absoluteHead], dl
@@ -98,7 +98,7 @@ LBACHS:
 
 ReadSectors:
         .MAIN
-            mov     dl, 0x0005
+            mov     di, 0x0005
         .SECTORLOOP
             push    ax
             push    bx

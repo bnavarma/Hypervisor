@@ -93,6 +93,9 @@ ReadSectors:
             mov     dh, BYTE [absoluteHead]
             mov     dl, BYTE [bsDriveNumber]
             int     0x13
+            jnc     .SUCCESS
+            xor     ax, ax
+            int     0x13
             dec     di
             pop     cx
             pop     bx

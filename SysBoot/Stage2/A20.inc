@@ -23,6 +23,10 @@ _EnableA20:
         push    eax
 
         call    a20wait
+        mov     al, 0xD1
+        out     0x64, al
+
+        call    a20wait
         pop     eax
         or      al, 2
         out     0x60, al

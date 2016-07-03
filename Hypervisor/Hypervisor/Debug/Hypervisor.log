@@ -1,8 +1,0 @@
-﻿cl : Command line warning D9025: overriding '/sdl-' with '/GS-'
-  DebugDisplay.cpp
-DebugDisplay.cpp(1): fatal error C1083: Cannot open include file: 'stdarg.h': No such file or directory
-  entry.cpp
-  main.cpp
-main.cpp(11): warning C4189: 'i': local variable is initialized but not referenced
-  Generating Code...
-c:\users\varmaav\documents\visual studio 2015\projects\hypervisor\hypervisor\entry.cpp(25): warning C4731: 'kernel_entry': frame pointer register 'ebp' modified by inline assembly code

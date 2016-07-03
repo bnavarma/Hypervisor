@@ -6,11 +6,16 @@
 ==============================================
 */
 
-extern void __cdecl main();
+
+#include <bootinfo.h>
+#include "DebugDisplay.h"
+
 extern void __cdecl InitializeConstructors();
 extern void __cdecl Exit();
 
-void __cdecl kernel_entry() {
+extern int __cdecl kmain(multiboot_info* bootinfo);
+
+void __cdecl kernel_entry(multiboot_info* bootinfo) {
 
 #ifdef ARCH_X86
     _asm {
@@ -20,21 +25,20 @@ void __cdecl kernel_entry() {
         mov es, ax
         mov fs, ax
         mov gs, ax
-        mov ss, ax
-        mov esp, 0x90000
-        mov ebp, esp
-        push ebp
     }
 #endif
 
     InitializeConstructors();
 
-    main();
+    kmain(bootinfo);
 
     Exit();
 
+    DebugPrintf("\nkernel_entry: shutdown complete. Halting system");
+
 #ifdef ARCH_X86
     _asm cli
+    _asm hlt
 #endif // ARCH_X86
     for (;;);
 }

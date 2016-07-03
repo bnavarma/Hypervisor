@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Kernel", "Hypervisor\Hypervisor.vcxproj", "{48AA4FF5-A2B0-4EF7-A6E1-5444EF8D05C8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{85805EAE-88ED-422A-98D6-B6961E3F030A} = {85805EAE-88ED-422A-98D6-B6961E3F030A}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lib", "Project1\Project1.vcxproj", "{85805EAE-88ED-422A-98D6-B6961E3F030A}"
 EndProject

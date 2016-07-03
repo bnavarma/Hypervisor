@@ -76,6 +76,11 @@ void __cdecl Exit() {
     }
 }
 
+void __cdecl InitializeConstructors() {
+    _atexit_init();
+    _initterm(__xc_a, __xc_z);
+}
+
 // purecall function handler
 int __cdecl ::_purecall() { for (;;); return 0; }
 

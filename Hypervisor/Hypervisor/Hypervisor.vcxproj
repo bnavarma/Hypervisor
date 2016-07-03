@@ -26,6 +26,11 @@
   <ItemGroup>
     <ClInclude Include="DebugDisplay.h" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Project1\Project1.vcxproj">
+      <Project>{85805eae-88ed-422a-98d6-b6961e3f030a}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{48AA4FF5-A2B0-4EF7-A6E1-5444EF8D05C8}</ProjectGuid>
     <RootNamespace>Hypervisor</RootNamespace>
@@ -116,6 +121,7 @@
       <BaseAddress>0x100000</BaseAddress>
       <FixedBaseAddress>false</FixedBaseAddress>
       <ImageHasSafeExceptionHandlers>true</ImageHasSafeExceptionHandlers>
+      <AdditionalOptions>/ALIGN:512</AdditionalOptions>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">

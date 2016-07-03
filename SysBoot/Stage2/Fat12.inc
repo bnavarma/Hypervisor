@@ -77,7 +77,7 @@ LoadFAT:
 
     mov     ax, WORD [bpbReservedSectors]
 
-    ; read FAT into memory (Overwrite out bootloader at 0x7c00)
+    ; read FAT into memory (Overwrite our bootloader at 0x7c00)
 
     push    word FAT_SEG
     pop     es
