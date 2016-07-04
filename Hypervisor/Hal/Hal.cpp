@@ -34,7 +34,7 @@ void __cdecl geninterrupt(int n) {
 #endif // ARCH_X86
 }
 
-inline void __cdecl interrputdone(unsigned int intno) {
+inline void __cdecl interruptdone(unsigned int intno) {
     if (intno > 16) return;
 
     if (intno >= 8) i86_pic_send_command(I86_PIC_OCW2_MASK_EOI, 1);

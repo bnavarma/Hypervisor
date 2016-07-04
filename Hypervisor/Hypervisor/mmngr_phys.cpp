@@ -18,7 +18,7 @@ inline void mmap_set(int bit);
 
 inline void mmap_unset(int bit);
 
-inline void mmap_test(int bit);
+inline bool mmap_test(int bit);
 
 int mmap_first_free();
 

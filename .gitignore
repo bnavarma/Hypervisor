@@ -4,3 +4,9 @@
 
 /Hypervisor/.vs/Hypervisor/v14
 /Hypervisor/Hypervisor.VC.opendb
+/Hypervisor/Debug
+/Hypervisor/Hal/Debug
+/Hypervisor/Hal/Release
+/Hypervisor/Hypervisor/Debug
+/Hypervisor/Hypervisor/Release
+/Hypervisor/Project1/Debug

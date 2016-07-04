@@ -24,7 +24,7 @@ void __cdecl i86_pit_irq() {
 
     _pit_ticks++;
 
-    interrputdone(0);
+    interruptdone(0);
 
 #ifdef ARCH_X86
     _asm {
@@ -66,7 +66,7 @@ void i86_pit_start_counter(uint32_t freq, uint8_t counter, uint8_t mode) {
 
     uint8_t ocw = 0;
     ocw = (ocw & ~I86_PIT_OCW_MASK_MODE) | mode;
-    ocw = (ocw & ~I86_PIT_OCW_MASK_RL) | I86_PIT_OCW_RL_DATA:
+    ocw = (ocw & ~I86_PIT_OCW_MASK_RL) | I86_PIT_OCW_RL_DATA;
     ocw = (ocw & ~I86_PIT_OCW_MASK_COUNTER) | counter;
     i86_pit_send_command(ocw);
 

@@ -32,7 +32,7 @@ char* strMemoryTypes[] = {
 uint32_t kernelSize = 0;
 uint32_t size = 0;
 
-void __cdecl kmain(multiboot_info* bootinfo) {
+int __cdecl kmain(multiboot_info* bootinfo) {
 #ifdef ARCH_X86
     _asm mov word ptr[kernelSize], dx
 #endif // ARCH_X86
@@ -65,7 +65,7 @@ void __cdecl kmain(multiboot_info* bootinfo) {
     setvect(19, (void(__cdecl &)(void))simd_fpu_fault);
 
     pmmngr_init(bootinfo->m_memorySize, 0xC0000000 + kernelSize * 512);
-    DebugPrintf("pmm initialized with %i KB\n", bootinfor->m_memorySize);
+    DebugPrintf("pmm initialized with %i KB\n", bootinfo->m_memorySize);
 
     memory_region* region = (memory_region*)0x1000;
 

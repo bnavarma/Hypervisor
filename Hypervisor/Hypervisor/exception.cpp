@@ -16,7 +16,7 @@ void __cdecl divide_by_zero_fault(uint32_t eflags, uint32_t cs, uint32_t eip, ui
         pushad
     }
 
-    kernel_panic("Divide by 0 at physical address [0x%x:0x%x] EFLAGS [0x%x] other: 0x%x", cs, epi, eflags, other);
+    kernel_panic("Divide by 0 at physical address [0x%x:0x%x] EFLAGS [0x%x] other: 0x%x", cs, eip, eflags, other);
     for(;;);
 }
 

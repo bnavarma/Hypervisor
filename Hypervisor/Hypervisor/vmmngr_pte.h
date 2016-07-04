@@ -5,7 +5,7 @@
 #include "mmngr_phys.h"
 
 enum PAGE_PTE_FLAGS {
-    I86_PTE_PRESET = 1,
+    I86_PTE_PRESENT = 1,
     I86_PTE_WRITABLE = 2,
     I86_PTE_USER = 4,
     I86_PTE_WRITETHROUGH = 8,

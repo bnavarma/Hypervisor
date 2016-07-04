@@ -61,14 +61,14 @@ inline void i86_pic_send_data(uint8_t data, uint8_t picNum) {
     outportb(reg, data);
 }
 
-inline uint8_t i86_pic_read_dat(uint8_t picNum) {
+inline uint8_t i86_pic_read_data(uint8_t picNum) {
     if (picNum > 1) return 0;
 
     uint8_t reg = (picNum == 1) ? I86_PIC2_REG_DATA : I86_PIC1_REG_DATA;
-    return outportb(reg);
+    return inportb(reg);
 }
 
-void i86_pic_initializer(uint8_t base0, uint8_t base1) {
+void i86_pic_initialize(uint8_t base0, uint8_t base1) {
     uint8_t icw = 0;
 
     disable();
@@ -82,7 +82,7 @@ void i86_pic_initializer(uint8_t base0, uint8_t base1) {
     i86_pic_send_data(0x04, 0);
     i86_pic_send_data(0x02, 1);
 
-    icw = (icw & I86_PIC_ICW4_MASK_UPM) | I86_PIC_ICW4_UPM_86_MODE;
+    icw = (icw & I86_PIC_ICW4_MASK_UPM) | I86_PIC_ICW4_UPM_86MODE;
 
     i86_pic_send_data(icw, 0);
     i86_pic_send_data(icw, 1);

@@ -12,11 +12,11 @@ inline void pd_entry_set_frame(pd_entry* e, physical_addr addr) {
     *e = (*e & ~I86_PDE_FRAME) | addr;
 }
 
-inline void pd_entry_is_present(pd_entry e) {
+inline bool pd_entry_is_present(pd_entry e) {
     return e & I86_PDE_PRESENT;
 }
 
-inline void pd_entry_is_writable(pd_entry e) {
+inline bool pd_entry_is_writable(pd_entry e) {
     return e & I86_PDE_WRITABLE;
 }
 
