@@ -1,5 +1,0 @@
-#ifndef _CSDARG_
-#define _CSDARG_
-#include <stdarg.h>
-
-#endif
